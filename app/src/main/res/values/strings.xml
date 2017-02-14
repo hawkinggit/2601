@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WearableLauncher</string>
+    <string-array name="settinglist">
+        <!--PHONE, SPORT, WEBXIN, TIMER, VOICESEARCH, ZHIFUBAO, HEARTBEATS, HEALTH, MAP, PAY, CAR, WEATHER, MESSAGE, SETTINGS, CALENDAR-->
+        <item>Phone</item>
+        <item>Sport</item>
+        <item>Weixin</item>
+        <item>TIMER</item>
+        <item>VOICESEARCH</item>
+        <item>ZHIFUBAO</item>
+        <item>HEARTBEATS</item>
+        <item>HEALTH</item>
+        <item>MAP</item>
+        <item>CAR</item>
+        <item>WEATHER</item>
+        <item>MESSAGE</item>
+        <item>SETTINGS</item>
+        <item>CALENDAR</item>
+    </string-array>
+</resources>
