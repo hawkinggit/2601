@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mstarc.wearablelauncher.view.DepthPageTransformer;
 import com.mstarc.wearablelauncher.view.HorizontalViewPager;
 import com.mstarc.wearablelauncher.view.SettingFragment;
 
@@ -36,6 +37,7 @@ public class MainActivity extends FragmentActivity {
         mPager.setAdapter(mPagerAdapter);
         mPager.setOffscreenPageLimit(NUM_PAGES);
         mPager.setCurrentItem(IDLE_PAGE_INDEX, true);
+        mPager.setPageTransformer(false,new DepthPageTransformer());
 
 
 //        setContentView(R.layout.clock_subfragment_layout);
