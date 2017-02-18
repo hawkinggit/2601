@@ -11,10 +11,19 @@
         <item>HEARTBEATS</item>
         <item>HEALTH</item>
         <item>MAP</item>
+        <item>PAY</item>
         <item>CAR</item>
         <item>WEATHER</item>
         <item>MESSAGE</item>
         <item>SETTINGS</item>
         <item>CALENDAR</item>
     </string-array>
+    <!--Detail settings first screen-->
+    <string name="setting_detail_network">Network</string>
+    <string name="setting_detail_time">Time</string>
+    <string name="setting_detail_security">Security</string>
+    <string name="setting_detail_preference">Preference</string>
+    <string name="setting_detail_update">Update</string>
+    <string name="setting_detail_reset">Reset</string>
+    <string name="setting_detail_about">About</string>
 </resources>
