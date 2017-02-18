@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.wearable.view.WearableListView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -34,19 +35,36 @@ public class SettingListAdapter extends WearableListView.Adapter {
 
     @Override
     public WearableListView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        return new WearableListView.ViewHolder(mInflater.inflate(R.layout.settingitem, null));
+        return new ViewHolder(mInflater.inflate(R.layout.settingitem, null));
     }
 
     @Override
     public void onBindViewHolder(WearableListView.ViewHolder viewHolder, int i) {
-        TextView view = (TextView) viewHolder.itemView.findViewById(R.id.textView);
+        ViewHolder holder = (ViewHolder) viewHolder;
+        TextView view = (TextView) holder.itemView.findViewById(R.id.textView);
         view.setText(mContext.getResources().getStringArray(R.array.settinglist)[i]);
-        view.setTag(i);
+        holder.setmItemId(SettingItemEnum.values()[i]);
     }
 
     @Override
     public int getItemCount() {
         return mSettingItemNameArray.length;
+    }
+
+    public static class ViewHolder extends WearableListView.ViewHolder{
+        public SettingItemEnum getmItemId() {
+            return mItemId;
+        }
+
+        public void setmItemId(SettingItemEnum mItemId) {
+            this.mItemId = mItemId;
+        }
+
+        private SettingItemEnum mItemId;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 
 }

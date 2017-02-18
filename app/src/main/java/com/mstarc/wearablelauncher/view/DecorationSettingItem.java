@@ -62,7 +62,7 @@ public class DecorationSettingItem extends RecyclerView.ItemDecoration {
 //            final int bottom = top + 5;
             mDivider.setBounds(left, top, right, bottom);
             mDivider.draw(c);
-            Log.d(TAG, left + " " + top + " "+right+"   "+bottom+" "+i);
+//            Log.d(TAG, left + " " + top + " "+right+"   "+bottom+" "+i);
         }
     }
 
