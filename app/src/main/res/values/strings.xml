@@ -26,4 +26,32 @@
     <string name="setting_detail_update">Update</string>
     <string name="setting_detail_reset">Reset</string>
     <string name="setting_detail_about">About</string>
+
+    <!--Detail settings second screen-->
+    <string name="setting_detail_network_wifi">WIFI连接</string>
+    <string name="setting_detail_network_communicate">通讯设置</string>
+    <string name="setting_detail_network_bluetooth">蓝牙连接</string>
+    <string name="setting_detail_security_password">服务密码</string>
+    <string name="setting_detail_security_offline_lock">离腕锁屏</string>
+    <string name="setting_detail_preference_push">隐私推送</string>
+    <string name="setting_detail_preference_weak_light">常亮微光</string>
+    <string name="setting_detail_preference_knock_open_screen">点击亮屏</string>
+    <string name="setting_detail_preference_voice">语音播报</string>
+    <string name="setting_detail_preference_screen_timeout">亮屏时间</string>
+    <string name="setting_detail_preference_language">语言设置</string>
+    <string name="setting_detail_update_version">版本更新</string>
+    <string name="setting_detail_update_current_version">当前版本信息</string>
+    <string name="setting_detail_update_switch_version">切换版本</string>
+    <string name="setting_detail_about_product_name">产品名称</string>
+    <string name="setting_detail_about_version">版本</string>
+    <string name="setting_detail_about_deviceid">设备ID</string>
+    <string name="setting_detail_about_serrial_number">序列号</string>
+    <string name="setting_detail_about_imei">IMEI</string>
+    <string name="setting_detail_about_ram">内存</string>
+    <string name="setting_detail_about_tourial">使用教程</string>
+
+    <!--Detail settings third screen-->
+    <string name="setting_detail_preference_voice_weather">天气播报</string>
+    <string name="setting_detail_preference_voice_sms">短信播报</string>
+    <string name="setting_detail_preference_voice_navigator">导航播报</string>
 </resources>

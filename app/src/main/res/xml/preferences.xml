@@ -24,14 +24,37 @@
         android:title="@string/setting_detail_network">
         <Preference
             android:layout="@layout/setting_detail_second_arrow"
-            android:title="test" />
+            android:title="@string/setting_detail_network_wifi" />
+        <Preference
+            android:layout="@layout/setting_detail_second_arrow"
+            android:title="@string/setting_detail_network_communicate" />
+        <Preference
+            android:layout="@layout/setting_detail_second_arrow"
+            android:title="@string/setting_detail_network_bluetooth" />
     </PreferenceScreen>
     <PreferenceScreen
         android:layout="@layout/setting_detail_header"
         android:title="@string/setting_detail_time"></PreferenceScreen>
     <PreferenceScreen
         android:layout="@layout/setting_detail_header"
-        android:title="@string/setting_detail_security"></PreferenceScreen>
+        android:title="@string/setting_detail_security">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="setting_detail_preference_push"
+            android:title="@string/setting_detail_preference_push" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="setting_detail_preference_weak_light"
+            android:title="@string/setting_detail_preference_weak_light" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="setting_detail_preference_knock_open_screen"
+            android:title="@string/setting_detail_preference_knock_open_screen" />
+        <Preference
+            android:layout="@layout/setting_detail_second_arrow"
+            android:key="setting_detail_preference_voice"
+            android:title="@string/setting_detail_preference_voice" />
+    </PreferenceScreen>
     <PreferenceScreen
         android:layout="@layout/setting_detail_header"
         android:title="@string/setting_detail_preference"></PreferenceScreen>
