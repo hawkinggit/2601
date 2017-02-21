@@ -1,0 +1,69 @@
+<android.support.wearable.view.drawer.WearableDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0000ff" />
+
+    <android.support.wearable.view.drawer.WearableDrawerView
+        android:id="@+id/top_navigation_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        app:drawer_content="@+id/drawer_content"
+        app:peek_view="@+id/peek_view">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@id/drawer_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff0000">
+            <!-- Drawer content goes here.  -->
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@id/peek_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"></LinearLayout>
+    </android.support.wearable.view.drawer.WearableDrawerView>
+
+    <android.support.wearable.view.drawer.WearableDrawerView
+        android:id="@+id/bottom_navigation_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:drawer_content="@+id/drawer_content"
+        app:peek_view="@+id/peek_view">
+
+        <FrameLayout
+            android:id="@id/drawer_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00ff00">
+            <!-- Drawer content goes here.  -->
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@id/peek_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"></LinearLayout>
+    </android.support.wearable.view.drawer.WearableDrawerView>
+
+</android.support.wearable.view.drawer.WearableDrawerLayout>

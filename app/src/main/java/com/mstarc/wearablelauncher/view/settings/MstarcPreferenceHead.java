@@ -1,9 +1,11 @@
-package com.mstarc.wearablelauncher;
+package com.mstarc.wearablelauncher.view.settings;
 
 import android.content.Context;
 import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.mstarc.wearablelauncher.R;
 
 /**
  * Created by wangxinzhi on 17-2-16.

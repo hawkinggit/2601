@@ -1,4 +1,4 @@
-package com.mstarc.wearablelauncher.view;
+package com.mstarc.wearablelauncher.view.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mstarc.wearablelauncher.MainActivity;
 import com.mstarc.wearablelauncher.R;
-import com.mstarc.wearablelauncher.SettingsActivity;
 import com.mstarc.wearablelauncher.view.adpter.ScrollChangeListener;
 import com.mstarc.wearablelauncher.view.adpter.SettingListAdapter;
+import com.mstarc.wearablelauncher.view.common.DepthPageTransformer;
 
 /**
  * Created by wangxinzhi on 17-2-12.
@@ -43,6 +44,7 @@ public class SettingFragment extends Fragment implements WearableListView.ClickL
         ViewGroup indicator = (ViewGroup) rootView.findViewById(R.id.setting_indicator);
         mSettingListView.addOnScrollListener(new ScrollChangeListener(indicator));
         mSettingListView.setClickListener(this);
+        rootView.setTag(DepthPageTransformer.ITEM_RIGHT_OR_BOTTOM);
         return rootView;
     }
 

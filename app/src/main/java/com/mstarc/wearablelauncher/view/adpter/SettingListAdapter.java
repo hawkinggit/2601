@@ -2,14 +2,13 @@ package com.mstarc.wearablelauncher.view.adpter;
 
 import android.content.Context;
 import android.support.wearable.view.WearableListView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mstarc.wearablelauncher.R;
-import com.mstarc.wearablelauncher.view.SettingFragment;
+import com.mstarc.wearablelauncher.view.settings.SettingFragment;
 
 /**
  * Created by wangxinzhi on 17-2-12.

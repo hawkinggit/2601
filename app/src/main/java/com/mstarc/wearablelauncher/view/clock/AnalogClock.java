@@ -1,4 +1,4 @@
-package com.mstarc.wearablelauncher.view;
+package com.mstarc.wearablelauncher.view.clock;
 
 /**
  * Created by wangxinzhi on 17-2-12.

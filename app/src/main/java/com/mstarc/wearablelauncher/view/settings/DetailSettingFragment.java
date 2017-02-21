@@ -1,4 +1,4 @@
-package com.mstarc.wearablelauncher.view;
+package com.mstarc.wearablelauncher.view.settings;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;

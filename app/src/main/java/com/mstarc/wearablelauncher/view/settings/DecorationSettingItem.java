@@ -1,19 +1,14 @@
-package com.mstarc.wearablelauncher.view;
+package com.mstarc.wearablelauncher.view.settings;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.nfc.Tag;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.mstarc.wearablelauncher.R;
-
-import static com.mstarc.wearablelauncher.view.SettingFragment.TAG;
 
 /**
  * Created by wangxinzhi on 17-2-12.

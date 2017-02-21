@@ -5,26 +5,34 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.Log;
 
-import com.mstarc.wearablelauncher.view.DepthPageTransformer;
-import com.mstarc.wearablelauncher.view.HorizontalViewPager;
-import com.mstarc.wearablelauncher.view.SettingFragment;
-
-
-public class MainActivity extends FragmentActivity {
-
-    private static final int NUM_PAGES = 2;
+import com.mstarc.wearablelauncher.example.ClockDrawerFragment;
+import com.mstarc.wearablelauncher.view.alipay.AlipayFragment;
+import com.mstarc.wearablelauncher.view.clock.IdleFragment;
+import com.mstarc.wearablelauncher.view.common.DepthPageTransformer;
+import com.mstarc.wearablelauncher.view.common.HorizontalViewPager;
+import com.mstarc.wearablelauncher.view.settings.SettingFragment;
 
 
-    private static final int IDLE_PAGE_INDEX = 0;
+public class MainActivity extends FragmentActivity implements IdleFragment.PageListener {
 
-    private static final int SETTING_PAGE_INDEX = 1;
+    private static final int NUM_PAGES = 3;
+
+
+    public static final int ALIPAY_PAGE_INDEX = 0;
+
+    public static final int IDLE_PAGE_INDEX = 1;
+
+    public static final int SETTING_PAGE_INDEX = 2;
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private HorizontalViewPager mPager;
     private ScreenSlidePagerAdapter mPagerAdapter;
+    private IdleFragment mIdleFragment = new IdleFragment();
+    private ClockDrawerFragment mClockDrawerFragment = new ClockDrawerFragment();
+    private SettingFragment mSettingFragment = new SettingFragment();
+    private AlipayFragment mAlipayFragment = new AlipayFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +43,17 @@ public class MainActivity extends FragmentActivity {
         mPager = (HorizontalViewPager) findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-        mPager.setOffscreenPageLimit(NUM_PAGES);
+        mPager.setOffscreenPageLimit(1);
         mPager.setCurrentItem(IDLE_PAGE_INDEX, true);
-        mPager.setPageTransformer(false,new DepthPageTransformer());
+        mIdleFragment.setPageListener(this);
+        mPager.setPageTransformer(true, new DepthPageTransformer(DepthPageTransformer.HORIZONTAL));
 
+    }
 
-//        setContentView(R.layout.clock_subfragment_layout);
-//        setContentView(R.layout.setting);
-//        WearableListView listView = (WearableListView) findViewById(R.id.setting_list_view);
-//        listView.setAdapter(new SettingListAdapter(this));
-//        listView.addItemDecoration(new DecorationSettingItem(this, LinearLayoutManager.VERTICAL));
-//        ViewGroup indicator = (ViewGroup) findViewById(R.id.setting_indicator);
-//        listView.addOnScrollListener(new ScrollChangeListener(indicator));
+    @Override
+    public void onPageSelected(int position) {
+        Log.d(TAG,"onPageSelected:"+position);
+        mPager.setSwipeEnabled(position == 1 ? true : false);
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
@@ -58,9 +65,11 @@ public class MainActivity extends FragmentActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == IDLE_PAGE_INDEX) {
-                return ClockFragment.getInstance();
+                return mIdleFragment;
             } else if (position == SETTING_PAGE_INDEX) {
-                return SettingFragment.getInstance();
+                return mSettingFragment;
+            } else if (position == ALIPAY_PAGE_INDEX) {
+                return mAlipayFragment;
             } else {
                 return null;
             }
@@ -72,23 +81,4 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    public static class ClockFragment extends Fragment {
-        private static ClockFragment INSTANCE;
-
-        public static ClockFragment getInstance() {
-            if (INSTANCE == null) {
-                INSTANCE = new ClockFragment();
-            }
-            return INSTANCE;
-        }
-
-        public ClockFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.clock_subfragment_layout, container, false);
-        }
-    }
 }
